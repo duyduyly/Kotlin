@@ -53,3 +53,99 @@ val myString3 = "I'm ${age + 1}" // can calculate in String
 #
 __For Loop and Ranges:__
 
+_Ranges_
+```kotlin
+    //1 -> 10
+    println("1. ")
+    for(item in 1..10){//print 1-10
+        print("$item ->")
+    }
+    println()
+    
+    println("2. ")
+    for (item in 1 until 10){ //just print 1-9
+        print("$item ->")
+    }
+    
+    println()
+    
+    println("3. ")
+    var ranges = 1..10 //range is variable and transmit to for loop
+    for (item in ranges){// 1-10
+        print("$item ->")
+    }
+    println()
+    
+    println("4. ")
+    for (item in 10 downTo 1){ //loop from 10 -> 1
+        print("$item ->")
+    }
+    
+    println()
+    
+    println("5. ")
+    for (item in 1..10 step 2){ //loop with step is 2
+        print("$item ->")
+    }
+    
+    println()
+    
+    println("6. ")
+    loop@ for (i in 1..3){ //loop with step is 2
+        for (j in 1..3){
+            println("i = $i <==> j = $j")
+            if (j > i){
+                break@loop //break outer loop in inner loop
+            }
+        }
+        println("i = $i")
+    }
+```
+__Result:__
+```bash
+    1. 
+    1 ->2 ->3 ->4 ->5 ->6 ->7 ->8 ->9 ->10 ->
+    2. 
+    1 ->2 ->3 ->4 ->5 ->6 ->7 ->8 ->9 ->
+    3. 
+    1 ->2 ->3 ->4 ->5 ->6 ->7 ->8 ->9 ->10 ->
+    4. 
+    10 ->9 ->8 ->7 ->6 ->5 ->4 ->3 ->2 ->1 ->
+    5. 
+    1 ->3 ->5 ->7 ->9 ->
+    6. 
+    i = 1 <==> j = 1
+    i = 1 <==> j = 2
+```
+#
+__While:__
+```kotlin
+    var item = 10
+    while(item < 15){
+        print("$item ->")
+        item++
+    }
+```
+
+__Result:__
+```bash
+  10 ->11 ->12 ->13 ->14 ->
+```
+#
+__Do While:__
+```kotlin
+    var item = 100
+    do{
+        print(item)
+        item++
+    }while(item < 115)
+```
+
+__Result:__
+```bash
+  100 ->101 ->102 ->103 ->104 ->105 ->106 ->107 ->108 ->109 ->110 ->111 ->112 ->113 ->114 ->
+```
+
+
+
+
