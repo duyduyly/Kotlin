@@ -254,6 +254,33 @@ _Result:_
     Condition Result: from 19 to 100
 ```
 
+## Package and Import
+- Firstly: I create package Security with two file Password.kt and Token.kt
+- in Password.kt have __encryptPass Method__
+- in Token have __generateToken Method__
+
+How to import above methods into Main.kt?
+
+__Solution 1:__
+```kotlin
+import org.example.security.encryptPass
+import org.example.security.generateToken
+```
+
+__Solution 2:__
+- use alias to make name for 'method import same name 2'
+```kotlin
+import org.example.security.encryptPass
+import org.example.security.encryptPass as encryptPass2 
+import org.example.security.generateToken
+```
+
+__Solution 3:__
+- Import all method in package
+```kotlin
+import org.example.security.*
+```
+
 
 
 
