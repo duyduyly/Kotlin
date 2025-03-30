@@ -1,5 +1,5 @@
 
-# Type
+# About Data Type
 
 - in Kotlin must initialize value for variable
 - if you do not define the data type for the variable then Kotlin automatic to knows this type based on your value
@@ -144,6 +144,114 @@ __Do While:__
 __Result:__
 ```bash
   100 ->101 ->102 ->103 ->104 ->105 ->106 ->107 ->108 ->109 ->110 ->111 ->112 ->113 ->114 ->
+```
+#
+## Condition
+
+
+__if-elseif-else__
+
+__Example__
+
+```kotlin
+    var number = (1..100).random()
+    println("Random value $number")
+    
+    //If-else Block 
+    println("If-else Block ")
+    if (number % 2 == 0) {
+        println("Random value $number is Oven")
+    } else {
+        print("Random value $number is Odd")
+    }
+    
+    //if else if value
+    println("If else if value")
+    if (number > 50) {
+        print("Random value $number greater than 50")
+    } else if (number < 100) {
+        println("Random value $number less than 100")
+    } else {
+        println("Random value greater than 50 or less than 100 ")
+    }
+    
+    //if else return value
+    println("if else return value")
+    val resutl = if (number < 5) {
+        "Random value $number  less than five"
+    } else if (number < 10) {
+        "Random value $number less than ten"
+    } else {
+        "Random value $number is else Condition"
+    }
+    
+    println("Result $resutl")
+
+```
+__Result:__
+```bash
+    Random value 30
+
+    If-else Block 
+    Random value 30 is Oven
+    
+    If else if value
+    Random value 30 less than 100
+    
+    if else return value
+    Result Random value 30 is else Condition
+```
+- if you use 'if' returning value, you must 'else' block in condition
+#
+__When Condition__
+- when <==> switch-case 
+
+__Example:__
+
+```kotlin
+    var number = (1..100).random()
+    println("Random value $number")
+    
+    when (number) {
+        in 1..16 -> {
+            println("Case 1 -> 16 ")
+        }
+        18 -> {
+            println("Case 18")
+        }
+        in 19..100 -> {
+            println("Case 19 -> 100")
+        }
+    
+        else -> {
+            println("Exception")
+        }
+    }
+    
+    //return value
+    val result = when (number) {
+        in 1..16 -> {
+            "from 1 to 16"
+        }
+        18 -> {
+            "enough 18"
+        }
+        in 19..100 -> {
+            "from 19 to 100"
+        }
+    
+        else -> {
+            "Exception"
+        }
+    }
+    
+    println("Condition Result: $result")
+```
+_Result:_
+```bash
+    Random value 95
+    Case 19 -> 100
+    Condition Result: from 19 to 100
 ```
 
 
