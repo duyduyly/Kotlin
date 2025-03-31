@@ -115,4 +115,105 @@ __Constructor__
 - protected : just subClass can call
 - internal: internal just use inner module ()
 
+#
 
+## Data Class
+```kotlin
+    fun main(){
+        var book1 = Book("Kotlin Programming", "Ryan", "2020")
+        var book2 = Book("Kotlin Programming", "Ryan", "2020")
+        
+        println(book1 == book2)
+        println(book1.toString())
+    
+        var baby1 = Baby("A", 1)
+        var baby2 = Baby("A", 1)
+        println(baby1 == baby2)
+        println(baby1.toString())
+    }
+
+    data class Book(val title: String, val author:String, val date: String)
+
+    class Baby(val name:String, val age:Int)
+```
+_Result_
+```bash
+    true
+    Book(title=Kotlin Programming, author=Ryan, date=2020) //Data support toString, Equal and hashCode Method like Java Program
+    false
+    org.example.Baby@6e8cf4c6 
+```
+Data class
+- Data support toString, Equal and hashCode Method like Java Program
+
+#
+## Enum Class
+```kotlin
+    fun main(){
+        var env = Env.PROC
+        println(env)
+        println(env.toString())
+        println(env.name)
+        println(env.ordinal)
+    
+        println("==================")
+        for (item in Env.values()){
+            println("$item value: ${item.value}")
+        }
+    
+    }
+    
+    enum class Env(val value:Int){
+        PROC(100),
+        STAGING(200),
+        DEVELOPMENT(300)
+    }
+```
+_Result_
+```bash
+    PROC
+    PROC
+    PROC
+    0
+    ==================
+    PROC value: 100
+    STAGING value: 200
+    DEVELOPMENT value: 300
+```
+
+__Override Method in Enum__
+
+__For Example 1__
+```kotlin
+   enum class Env(val value:Int){
+        PROC(100){
+            override fun toString(): String {
+                return "Override"
+}
+        },
+        STAGING(200),
+        DEVELOPMENT(300)
+    }
+```
+__For Example 2__
+```kotlin
+   enum class Env(val value:Int){
+        PROC(100){
+            override fun transform(): String {
+                return "Override"
+}
+        },
+        STAGING(200){
+            override fun transform(): String {
+                return "STAGING(200)"
+            }
+        },
+        DEVELOPMENT(300){
+            override fun transform(): String {
+                return "DEVELOPMENT(300)"
+            }
+        };
+    
+        abstract fun transform(): String
+    }
+```
