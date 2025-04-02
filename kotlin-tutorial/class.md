@@ -240,3 +240,23 @@ __For Example 2__
     }
 
 ```
+
+## Hiding Constructors
+- to cannot create instance of class
+
+```kotlin
+fun main(){
+    var k = Kotlin()//can not create instance of class
+    
+    Kotlin.run() //it's ok
+}
+
+class Kotlin private constructor(){
+    companion object{
+        fun run(){
+            
+        }
+    }
+}
+
+```
