@@ -260,3 +260,18 @@ class Kotlin private constructor(){
 }
 
 ```
+
+## sealed class
+- limit scope inherit
+- only subclass in parent class can inherit
+
+```kotlin
+sealed class ApiResult{
+    data class Success(val data:Int): ApiResult()
+    data class Error(val data:Int): ApiResult()
+}
+
+
+//suppose this is class outer file, it can not inherit
+data class OuterClass(val data:Int): ApiResult()
+```
