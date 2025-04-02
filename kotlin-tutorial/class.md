@@ -217,3 +217,26 @@ __For Example 2__
         abstract fun transform(): String
     }
 ```
+## Late Initialize
+- use to when create a variable in class, but you needn't create value
+```kotlin
+
+    fun main(){
+        var myBaby = MyBaby()
+        //println(myBaby.showName()) // error, because you have not initialization value for name yet
+
+        myBaby.name = "name"
+        println(myBaby.showName()) // it's ok
+    }
+    class MyBaby{
+        lateinit var name:String //ok, you must initialize value when you call it, if not it will be error
+        //var name:String = ""     //it's ok
+        //var name:String? = null  //it's ok
+        //var name:String // not ok, you must 
+        
+        fun showName(){
+            println(name)
+        }
+    }
+
+```
