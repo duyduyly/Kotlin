@@ -43,3 +43,16 @@ class Guru2{
 }
 
 ```
+#
+__Constant in Kotlin__
+- in Object Math is Constant 
+```kotlin
+
+fun main() {
+    print(Math.PI) 
+}
+
+object Math{ 
+        var PI = 3.14
+    }
+```
