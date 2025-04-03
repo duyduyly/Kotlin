@@ -20,3 +20,4 @@ fun calculate(x: Int, y: Int, func: (Int, Int)-> Int) : Int{
 
 fun execute(x: Int, y:Int) = x + y
 ```
+
