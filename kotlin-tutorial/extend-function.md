@@ -50,3 +50,6 @@ Result:
 ```bash
     120
 ```
+
+## Inline Function
+- research after
